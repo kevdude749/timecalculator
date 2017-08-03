@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time Calculator - For Cross Country, Track, and More!</title>
+        <style>
+            *{
+                font-family:'courier new';
+            }
+            p{
+                font-size:18px;
+            }
+            #timeTable td{
+                width:50%;
+                text-align:center;
+                font-size:16px;
+            }
+            #timeTable tr :first-child{
+                border-right:2px solid #aaa;
+            }
+            #timeTable tr:nth-child(even){
+                background-color:#fff;
+            }
+            #timeTable tr:nth-child(odd){
+                background-color:#f4f4f4;
+            }
+
+        </style>
+    </head>
+    <body>
+        <br>
+        <p style="text-align:center;font-size:22px;">Time Calculator - For Cross Country, Track, and More!</p>
+        
+        <br>
+        <div style="width:100%;border:1px dashed #aaa;"></div>
+        
+        <table align="center"><tr>
+            
+        <td style="padding-right:5vmin;">
+            <p style="text-align:center;">Original Times:</p>
+            <table align="center" style="width:50%;">
+                <tr align="center"><td>Lowest Time: <input value="6:00" id="minTime" placeholder="MM:SS format" oninput="updateTimes();"><br><br>Highest Time: <input id="maxTime" placeholder="MM:SS format" value="7:00" oninput="updateTimes();"><br><br>Increment: <input value="5" id="stepTime" placeholder="In Seconds" oninput="updateTimes();"></td></tr>
+            </table>
+            
+        </td>
+        
+        <td style="padding-right:5vmin;">
+            <p style="text-align:center;">Modified Times:</p>
+            <table align="center" >
+                
+                <thead>
+                    <tr align="center">
+                        <th style="width:50%;">Operation</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr align="center">
+                        <td colspan="2" style="padding-top:2vmin;"><button onclick="addOperation();">Add More...</button></td>
+                    </tr>
+                </tfoot>
+                <tbody id="operations" onclick="console.log('test');updateTimes();">
+                    <tr align="center">
+                        <td style="width:50%;">
+                            <select>
+                                
+                                <option>Add</option>
+                                <option>Subtract</option>
+                                <option>Multiply</option>
+                                <option>Divide</option>
+                                <option>Round</option>
+                                
+                            </select>
+                        </td>
+                        <td><input oninput="updateTimes();" value="5"></td>
+                    </tr>
+                </tbody>
+            
+            </table>
+        
+        </td>
+        
+        </tr></table>
+        
+      
+        <br><br>
+        
+        
+        
+        <br>
+        <br>
+        <div style="width:100%;border:1px dashed #aaa;"></div>
+        <p style="text-align:center;">Time List:</p>
+        <table style="width:80vmin;border:2px solid #aaa;" cellspacing=0 cellpadding=8 align="center">
+            <thead>
+                <tr>
+                    <th>Original Times</th>
+                    <th>Modified Times</th>
+                </tr>
+            </thead>
+            <tbody id="timeTable">
+                
+            </tbody>
+        </table>
+        
+        <br><br>
+        
+        <p style="font-size:14px; text-align:center;">Created by Kevin Champagne</p>
+
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+        
+    </body>
+</html>
